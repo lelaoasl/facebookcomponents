@@ -1,0 +1,23 @@
+.comment{
+  display:flex;
+
+}
+
+.comment img {
+  height:40px;
+  width:40px;
+  border-radius: 50%;
+}
+
+.comment .box {
+  height:100px;
+  width:600px;
+  background-color: rgb(236, 232, 232);
+  border-radius: 2%;
+  margin-left: 20px;
+  padding:10px;
+}
+
+.comment .box strong {
+  margin-right: 5px;
+}

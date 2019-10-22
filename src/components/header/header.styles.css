@@ -1,0 +1,28 @@
+.header {
+  background: rgb(25, 21, 78);
+  height:100px;
+  color:#fff;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header span {
+  margin-left: 20px;
+  font-size: 32px;
+}
+
+.header div {
+  margin-right: 20px;
+}
+
+.right {
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.right img {
+  height:30px;
+  margin-left: 5px;
+}
