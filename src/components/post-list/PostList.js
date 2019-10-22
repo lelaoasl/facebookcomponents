@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 
-import './post-list.styles.css';
-
-import Post from '../../components/post/Post';
-
+import PostItem from '../../components/post-item/PostItem';
 
 class PostList extends Component {
   state = {
@@ -11,55 +8,101 @@ class PostList extends Component {
       {
         id: 1,
         author: {
-          name: "Julio Alcantara",
-          avatar: "https://pbs.twimg.com/profile_images/1055263632861343745/vIqzOHXj.jpg"
+          name: 'Vanessa Romero',
+          avatar: 'https://i.pravatar.cc/150?img=1'
         },
-        date: "04 Jun 2019",
-        content: "Lorem ipsum dolor sit amet, consectetur?",
+        date: '04 Jun 2019',
+        content: 'Pessoal, alguém sabe se a Rocketseat está contratando?',
         comments: [
           {
-            id: 1,
+            id: 2,
             author: {
-              name: "Amanda Alves",
-              avatar: "https://images.unsplash.com/photo-1524593689594-aae2f26b75ab?ixlib=rb-1.2.1&w=1000&q=80"
+              name: 'Diego Fernandes',
+              avatar: 'https://avatars2.githubusercontent.com/u/2254731?v=4'
             },
-            content: "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+            date: '04 Jun 2019',
+            content:
+              'A Rocketseat está sempre em busca de novos membros para o time, e geralmente ficamos de olho em quem se destaca no Bootcamp, inclusive 80% do nosso time de devs é composto por alunos do Bootcamp. Além disso, se você tem vontade de ensinar gravando vídeos e criando posts, pode me chamar no Discord! (Sério, me chamem mesmo, esse comentário é real)'
           }
         ]
       },
       {
-        id: 2,
+        id: 3,
         author: {
-          name: "Julio Alcantara",
-          avatar: "https://pbs.twimg.com/profile_images/1055263632861343745/vIqzOHXj.jpg"
+          name: 'Neil Cook',
+          avatar: 'https://i.pravatar.cc/150?img=8'
         },
-        date: "04 Jun 2019",
-        content: "Nulla efficitur erat purus, hendrerit tincidunt.",
+        date: '04 Jun 2019',
+        content:
+          'Fala galera, beleza?\nEstou fazendo o Bootcamp GoStack e está sendo muito massa! Alguém mais aí fazendo? Comenta aí na publicação para trocarmos uma idéia',
         comments: [
           {
-            id: 1,
+            id: 4,
             author: {
-              name: "Amanda Alves",
-              avatar: "https://images.unsplash.com/photo-1524593689594-aae2f26b75ab?ixlib=rb-1.2.1&w=1000&q=80"
+              name: 'Clara Lisboa',
+              avatar: 'https://i.pravatar.cc/150?img=5'
             },
-            content: "Curabitur a nisl quis metus facilisis pharetra. Aliquam interdum auctor feugiat. Pellentesque eget eros malesuada, imperdiet purus et, tempor metus. Donec maximus volutpat lectus, in lobortis est viverra eget. Vestibulum auctor justo ac sem elementum ultricies. Sed condimentum arcu eu mauris tincidunt sodales. Vestibulum placerat justo vel leo lacinia hendrerit."
+            date: '04 Jun 2019',
+            content:
+              'Também estou fazendo o Bootcamp e estou adorando! Estou no terceiro módulo sobre Node e já tenho minha API dos desafios construída!'
+          },
+          {
+            id: 5,
+            author: {
+              name: 'Cézar Toledo',
+              avatar: 'https://i.pravatar.cc/150?img=11'
+            },
+            date: '04 Jun 2019',
+            content:
+              'Que maaaaaassa! Estou pensando em me inscrever na próxima turma pra ver qual é desse Bootcamp GoStack, dizem que os devs saem de lá com super poderes'
           }
         ]
       },
+      {
+        id: 6,
+        author: {
+          name: 'Gabriel Lisboa',
+          avatar: 'https://i.pravatar.cc/150?img=51'
+        },
+        date: '04 Jun 2019',
+        content:
+          'Fala galera, beleza?\nEstou fazendo o Bootcamp GoStack e está sendo muito massa! Alguém mais aí fazendo? Comenta aí na publicação para trocarmos uma idéia',
+        comments: [
+          {
+            id: 4,
+            author: {
+              name: 'Clara Lisboa',
+              avatar: 'https://i.pravatar.cc/150?img=5'
+            },
+            date: '04 Jun 2019',
+            content:
+              'Também estou fazendo o Bootcamp e estou adorando! Estou no terceiro módulo sobre Node e já tenho minha API dos desafios construída!'
+          },
+          {
+            id: 5,
+            author: {
+              name: 'Cézar Toledo',
+              avatar: 'https://i.pravatar.cc/150?img=11'
+            },
+            date: '04 Jun 2019',
+            content:
+              'Que maaaaaassa! Estou pensando em me inscrever na próxima turma pra ver qual é desse Bootcamp GoStack, dizem que os devs saem de lá com super poderes'
+          }
+        ]
+      }
     ]
   };
 
   render() {
-    return(
-      <div className="content">
-        <ul>
-          {this.state.posts.map(post => <Post key={post.id} data={post} />)}
-        </ul>
+    const { posts } = this.state;
 
-    </div>
-
-    )
- 
+    return (
+      <div className="postlist">
+        {posts.map(post => (
+          <PostItem key={post.id} {...post} />
+        ))}
+      </div>
+    );
   }
 }
 

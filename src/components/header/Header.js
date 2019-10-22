@@ -1,19 +1,17 @@
 import React from 'react';
 
-import '../../components/header/header.styles.css';
-import profileLogo from '../../assets/149071.svg';
-
-const Header = () => {
-  return(
-    <div className="header">
-      <span>facebook.</span>
-      <div className="right">Meu perfil
-        <img src={profileLogo} />
-      </div>
-    </div>
-  )
- 
-
+function Header() {
+  return (
+    <header>
+      <nav>
+        <img src="https://i.imgur.com/KDIDiSE.png" />
+        <div>
+          <span>Meu perfil</span>
+          <i className="material-icons">account_circle</i>
+        </div>
+      </nav>
+    </header>
+  );
 }
 
 export default Header;
