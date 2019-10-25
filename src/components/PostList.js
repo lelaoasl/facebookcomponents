@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import PostItem from '../../components/post-item/PostItem';
+import PostItem from './PostItem';
 
 class PostList extends Component {
   state = {
